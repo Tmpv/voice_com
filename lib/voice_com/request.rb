@@ -36,7 +36,7 @@ module VoiceCom
     end
 
     def validate!
-      [:msg, :smsid, :phone, :text].each do |sym|
+      [:smsid, :phone, :text].each do |sym|
         raise ArgumentError, "Requered attribute #{sym}" if send(sym).blank?
       end
       
