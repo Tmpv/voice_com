@@ -55,6 +55,8 @@ A template is give in the gem's repository in templates/voicecom_config.yml.
 
   The method returns a response string, check VoiceCom documentation for more details.
 
+## Response
+
   Creating a response object:
 
     response = VoiceCom::Response.new response_attr
@@ -66,7 +68,7 @@ A template is give in the gem's repository in templates/voicecom_config.yml.
 
 
 
-## Response
+
 
 
 
