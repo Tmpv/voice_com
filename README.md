@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # VoiceCom
 
 TODO: Write a gem description
