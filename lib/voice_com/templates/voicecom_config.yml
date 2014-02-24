@@ -1,0 +1,12 @@
+development:
+  service_url: url/given/by/the/service/provider
+  sid: ID/given/by/the/service/provider
+  sms_uniq_id_column: this is an optional configuration/see uniq_sms_id method for more details
+production:
+  service_url: url/given/by/the/service/provider
+  sid: ID/given/by/the/service/provider
+  sms_uniq_id_column: this is an optional configuration/see uniq_sms_id method for more details
+test:
+  service_url: url/given/by/the/service/provider
+  sid: ID/given/by/the/service/provider
+  sms_uniq_id_column: this is an optional configuration/see uniq_sms_id method for more details

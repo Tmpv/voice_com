@@ -3,7 +3,7 @@ require 'net/http'
 module VoiceCom
   class Request
 
-    attr_accessor :smsid, :phone, :text, :op, :proirity, :validity
+    attr_accessor :smsid, :phone, :text, :op, :priority, :validity
 
     def initialize(args = {})
 
@@ -15,7 +15,7 @@ module VoiceCom
       validate!
     end
 
-    def send_request
+    def send_message
       build_uri
       responce = Net::HTTP.get URI(@request_uri)
     end
@@ -32,12 +32,12 @@ module VoiceCom
     private
 
     def addition_attr_to_uri(str)
-      str + "&" + ["op", "proirity", "validity"].select{|x| instance_variable_get("@#{x}")}.map{|x| "#{x}" + "=" + instance_variable_get("@#{x}")}.join("&")
+      str + "&" + ["op", "priority", "validity"].select{|x| instance_variable_get("@#{x}")}.map{|x| "#{x}" + "=" + instance_variable_get("@#{x}")}.join("&")
     end
 
     def validate!
       [:smsid, :phone, :text].each do |sym|
-        raise ArgumentError, "Requered attribute #{sym}" if send(sym).blank?
+        raise ArgumentError, "Required attribute #{sym}" if send(sym).blank?
       end
       
     end
