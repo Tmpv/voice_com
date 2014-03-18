@@ -28,10 +28,7 @@ module VoiceCom
 
 
     def success?
-      
-      #in que to be implemented
-      true 
-
+      dlr.to_i == 1
     end
 
     private
