@@ -5,7 +5,7 @@ module VoiceCom
     attr_reader :answer_hash
 
     def initialize(args = {})
-      args.each {|k,v| instance_variable_set("@#{k}", v)}
+      args.each {|k,v| instance_variable_set("@#{k.strip}", v)}
       yield self if block_given?
       validate!
       parse_answer

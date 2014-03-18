@@ -22,7 +22,6 @@ module VoiceCom
 
     def build_uri
       url_string = "http://#{@main_url}?serviceID=#{@sid}&id=#{smsid}&msisdn=#{phone}&msg=#{text}"
-      # url_string = "http://#{@main_url}?sid=#{@sid}&id=#{smsid}&msisdn=#{phone}&text=#{text}"
       url_str    = addition_attr_to_uri url_string
 
       @request_uri = URI.encode url_str
