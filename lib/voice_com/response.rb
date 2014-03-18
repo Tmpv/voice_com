@@ -6,7 +6,7 @@ module VoiceCom
 
     def initialize(args = {})
       args.each do |k,v|
-        k = k.strip.gsub("\n", '')
+        k = k.strip.gsub("\s", "")
         instance_variable_set("@#{k.strip}", v)
       end
       yield self if block_given?
