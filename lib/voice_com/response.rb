@@ -5,7 +5,10 @@ module VoiceCom
     attr_reader :answer_hash
 
     def initialize(args = {})
-      args.each {|k,v| instance_variable_set("@#{k.strip}", v)}
+      args.each do |k,v|
+        k = k.strip.gsub("\n", '')
+        instance_variable_set("@#{k.strip}", v)
+      end
       yield self if block_given?
       validate!
       parse_answer
